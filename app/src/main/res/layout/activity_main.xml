@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/color_accent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
+            <TextView
+                android:id="@+id/appTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ToDo Buddy"
+                android:textColor="@color/color_text3"
+                android:fontFamily="@font/u_bold"
+                android:textSize="@dimen/_21sdp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/search_Layout"
+                android:layout_margin="10dp"
+                app:layout_constraintTop_toBottomOf="@id/appTitle"
+                android:orientation="horizontal"
+                android:background="@drawable/background_search"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/search_image"
+                    android:src="@drawable/ic_search"
+                    android:layout_margin="5dp"
+                    app:tint="@color/white" />
+
+                <EditText
+                    android:id="@+id/search_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/toDo_recyclerView"
+                android:layout_margin="5dp"
+                app:layout_constraintTop_toBottomOf="@id/search_Layout"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+
+  <include layout="@layout/todo_add"/>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
